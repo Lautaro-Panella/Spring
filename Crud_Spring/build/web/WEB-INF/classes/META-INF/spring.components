@@ -1,0 +1,5 @@
+#
+#Mon Mar 01 17:21:14 ART 2021
+controlador.clienteDAOclase=org.springframework.stereotype.Component
+entidad.Cliente=javax.persistence.Entity,javax.persistence.Table
+controlador.controlador=org.springframework.stereotype.Component
