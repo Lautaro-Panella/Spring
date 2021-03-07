@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class UsuarioServicio {
     
     @Autowired
-    UsuarioRepositorio usuarioRepositorio;
+    private UsuarioRepositorio usuarioRepositorio;
     
     public List<UsuarioModelo> getUsuarios() {
         return (ArrayList<UsuarioModelo>) usuarioRepositorio.findAll(); // Encontrar todos los registros.
@@ -32,7 +32,7 @@ public class UsuarioServicio {
         return usuarioRepositorio.findById(id);
     }
     
-    public List<UsuarioModelo> getUsuarioPorNombre(String nombre) { // Encontrar registros por Nombre.
+    public List<UsuarioModelo> getUsuariosPorNombre(String nombre) { // Encontrar registros por Nombre.
         return usuarioRepositorio.findByNombre(nombre);
     }
     

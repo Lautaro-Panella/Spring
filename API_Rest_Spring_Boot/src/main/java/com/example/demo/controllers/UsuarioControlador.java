@@ -49,8 +49,8 @@ public class UsuarioControlador {
     }
     
     @GetMapping("/consulta") // Al hacer una petición con la ruta principal/consulta?nombre=valorNombre y el método GET, el controller nos devuelve el/los usuario/s con el Nombre indicado.
-    public List<UsuarioModelo> getUsuarioPorNombre(@RequestParam("nombre") String nombre) {
-        return usuarioServicio.getUsuarioPorNombre(nombre);
+    public List<UsuarioModelo> getUsuariosPorNombre(@RequestParam("nombre") String nombre) {
+        return usuarioServicio.getUsuariosPorNombre(nombre);
     }
     
     @PostMapping() // Al hacer una petición con la ruta principal y el método POST, pasando en el body, en formato JSON el objeto a guardar/actualizar, el controller guarda el usuario (si no especificamos Id), o actualiza el usuario (si especificamos Id).

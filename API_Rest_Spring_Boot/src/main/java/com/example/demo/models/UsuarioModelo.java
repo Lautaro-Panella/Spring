@@ -5,12 +5,17 @@
  */
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -32,6 +37,10 @@ public class UsuarioModelo implements Serializable {
     private String apellido;
     @Column(name = "email")
     private String email;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<DireccionModelo> direcciones;
 
     public UsuarioModelo() {
     }
@@ -73,6 +82,14 @@ public class UsuarioModelo implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<DireccionModelo> getDirecciones() {
+        return direcciones;
+    }
+
+    public void setDirecciones(DireccionModelo direccion) {
+        this.direcciones.add(direccion);
     }
     
 }
