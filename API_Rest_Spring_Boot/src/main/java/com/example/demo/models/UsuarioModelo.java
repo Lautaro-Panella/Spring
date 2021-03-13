@@ -39,7 +39,7 @@ public class UsuarioModelo implements Serializable {
     private String email;
     
     @JsonIgnore
-    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<DireccionModelo> direcciones;
 
     public UsuarioModelo() {
@@ -88,8 +88,8 @@ public class UsuarioModelo implements Serializable {
         return direcciones;
     }
 
-    public void setDirecciones(DireccionModelo direccion) {
-        this.direcciones.add(direccion);
+    public void setDirecciones(List<DireccionModelo> direcciones) {
+        this.direcciones = direcciones;
     }
     
 }
