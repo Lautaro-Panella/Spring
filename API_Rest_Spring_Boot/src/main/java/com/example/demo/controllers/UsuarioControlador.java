@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Guardados/Actualizados o un mensaje para el caso de los Eliminados, para visualizarlos en el panel de respuesta de PostMan.
  */
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/usuario") // Ruta principal.
 public class UsuarioControlador {
